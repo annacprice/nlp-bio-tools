@@ -39,7 +39,7 @@ docker run -v $(pwd)/data:/data --rm pdf2nlp
 ```
 
 ### mlpipe ###
-mlpipe is used to build the machine learning model. The user can select which vectorizer and ML algorithm they wishto use to build the model. 
+mlpipe is used to build the machine learning model. The user can select which vectorizer and ML algorithm they wish to use to build the model. 
 
 #### Setup: ####
 * The postive and negative datasets should first be processed using pdf2nlp. The positive dataset should then be placed in mlpipe/data/text/positive and the negative dataset in mlpipe/data/text/negative.
@@ -76,7 +76,7 @@ loadmodel takes the saved machine learning model from mlpipe and uses it to pred
 * The txt files you wish to evaluate should be placed in loadmodel/data/text.
 * A results file is saved to loadmodel/data/output.
 
-The Docker image for loadmodel can be found here. Alternatively, it can be built from the included Dockerfile like so:
+To download the image from Docker Hub:
 ```
 docker pull annacprice/loadmodel:1.0
 ```
