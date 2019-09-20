@@ -2,7 +2,8 @@
 #----------------------------------------------------------------------
 # Author: Anna Price
 
-# This script is part of the bioNLPtools software tool.
+# This script is part of the nlp-bio-tools software tool: 
+# https://github.com/annacprice/nlp-bio-tools
 
 # It takes the input pdf files and converts them to plain text,
 # the text is then passed through a natural language processing
