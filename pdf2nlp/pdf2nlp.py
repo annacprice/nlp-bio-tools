@@ -2,7 +2,8 @@
 #----------------------------------------------------------------------
 # Author: Anna Price
 
-# This script is part of the bioNLPtools software tool.
+# This script is part of the nlp-bio-tools software tool: 
+# https://github.com/annacprice/nlp-bio-tools
 
 # It takes the input pdf files and converts them to plain text,
 # the text is then passed through a natural language processing
@@ -108,12 +109,20 @@ def txt_process(in_pdf, out_txt):
             
             # STEP 4: REMOVE STOP WORDS
             message = nltk.word_tokenize(message)
+
+            # remove common stopwords
             stopwords = nltk.corpus.stopwords.words()
             filteredWords = []
             for word in message:
                 if word not in stopwords:
                     filteredWords.append(word)
                     message = filteredWords
+            
+            # remove biomedical academic stopwords
+            with open("/data/biostopwords.txt") as file:
+                stopbio = file.read().splitlines()
+
+            message = [item for item in message if item not in stopbio]
 
             # STEP 5: STEMMING
             stemmedWords = []

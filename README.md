@@ -30,7 +30,7 @@ pdf2nlp takes an input pdf and parses the text using pdfminer (note that pdfmine
 
 To download the image from Docker Hub:
 ```
-docker pull annacprice/pdf2nlp:1.0
+docker pull annacprice/pdf2nlp:1.1
 ```
 To run the application in a Docker container:
 ```
@@ -59,7 +59,7 @@ and the following ML algorithms:
 
 To download the image from Docker Hub:
 ```
-docker pull annacprice/mlpipe:1.0
+docker pull annacprice/mlpipe:1.1
 ```
 
 So for example to run the application in a Docker container with the TfidfVectorizer and the LogisticRegression model:
@@ -78,7 +78,7 @@ loadmodel takes the saved machine learning model from mlpipe and uses it to pred
 
 To download the image from Docker Hub:
 ```
-docker pull annacprice/loadmodel:1.0
+docker pull annacprice/loadmodel:1.1
 ```
 To run the application in a Docker container:
 ```
