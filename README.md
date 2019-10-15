@@ -24,9 +24,11 @@ A logistic regression model for the classification of articles into the HGMD is 
 ### pdf2nlp ###
 pdf2nlp takes an input pdf and parses the text using pdfminer (note that pdfminer can only extract embedded text and cannot process scanned pdfs). The parsed text is then processed by a NLP pipeline that returns stemmed tokens, which the machine learning algorithm in mlpipe can fit to. 
 
+A list of stopwords (biostopwords.txt) relevant to academic biomedical articles is used by pdf2nlp to remove common words which we don't want the model in mlpipe to fit to. A  US-UK English dictionary (ustouk.txt) is used to convert all the text to UK English.
+
 #### Setup: ####
-* The input pdfs should be placed in pdf2nlp/data/papers.
-* The output txt files will be saved to pdf2nlp/data/output.
+* The input pdfs should be placed in pdf2nlp/data/papers
+* The output txt files will be saved to pdf2nlp/data/output
 
 To download the image from Docker Hub:
 ```
@@ -42,8 +44,8 @@ docker run -v $(pwd)/data:/data --rm pdf2nlp
 mlpipe is used to build the machine learning model. The user can select which vectorizer and ML algorithm they wish to use to build the model. 
 
 #### Setup: ####
-* The postive and negative datasets should first be processed using pdf2nlp. The positive dataset should then be placed in mlpipe/data/text/positive and the negative dataset in mlpipe/data/text/negative.
-* A results file and ROC curve are saved to mlpipe/data/output, along with the saved vectorizer and model (vectorizer.pkl and model.pkl) which are used by loadmodel.
+* The postive and negative datasets should first be processed using pdf2nlp. The positive dataset should then be placed in mlpipe/data/text/positive and the negative dataset in mlpipe/data/text/negative
+* A results file and ROC curve are saved to mlpipe/data/output, along with the saved vectorizer and model (vectorizer.pkl and model.pkl) which are used by loadmodel
 
 The following vectorizers are available:
 * [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
@@ -72,9 +74,9 @@ docker run -v $(pwd)/data:/data --rm mlpipe TfidfVectorizer LogisticRegression
 loadmodel takes the saved machine learning model from mlpipe and uses it to predict the class of new documents. 
 
 #### Setup: ####
-* The saved vectoriser and model should be placed in loadmodel/data/models. 
-* The txt files you wish to evaluate should be placed in loadmodel/data/text.
-* A results file is saved to loadmodel/data/output.
+* The saved vectoriser and model should be placed in loadmodel/data/models 
+* The txt files you wish to evaluate should be placed in loadmodel/data/text
+* A results file is saved to loadmodel/data/output
 
 To download the image from Docker Hub:
 ```
