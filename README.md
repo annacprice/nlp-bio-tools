@@ -24,7 +24,7 @@ A logistic regression model for the classification of articles into the HGMD is 
 ### pdf2nlp ###
 pdf2nlp takes an input pdf and parses the text using pdfminer (note that pdfminer can only extract embedded text and cannot process scanned pdfs). The parsed text is then processed by a NLP pipeline that returns stemmed tokens, which the machine learning algorithm in mlpipe can fit to. 
 
-A list of stopwords (biostopwords.txt) relevant to academic biomedical articles is used by pdf2nlp to remove common words which we don't want the model in mlpipe to fit to. A  US-UK English dictionary (ustouk.txt) is used to convert all the text to UK English.
+A list of stopwords (pdf2nlp/data/biostopwords.txt) relevant to academic biomedical articles is used by pdf2nlp to remove common words which we don't want the model in mlpipe to fit to. A US-UK English dictionary (pdf2nlp/data/ustouk.txt) is used to convert all the text to UK English.
 
 #### Setup: ####
 * The input pdfs should be placed in pdf2nlp/data/papers
