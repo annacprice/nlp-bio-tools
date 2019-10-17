@@ -46,7 +46,7 @@ find . -name '.DS_Store' -type f -delete
 ```
 First navigate to the correct directory
 ```
-cd nlp-bio-tools-1.1/pdf2nlp
+cd nlp-bio-tools-1.1/mlpipe
 ```
 And then run the container with the CountVectorizer and KNeighborsClassifier algorithm
 ```
@@ -65,7 +65,7 @@ cd nlp-bio-tools-1.1/loadmodel
 ``` 
 And then run the container
 ```
-docker run -v $(pwd)/data:/data --rm loadmodel vectorizer.pkl model.pkl
+docker run -v $(pwd)/data:/data --rm anncprice/loadmodel:1.1 vectorizer.pkl model.pkl
 ```
 
 This should reproduce the MLresults.txt file in loadmodel/data/output
