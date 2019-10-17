@@ -65,7 +65,7 @@ cd nlp-bio-tools-1.1/loadmodel
 ``` 
 And then run the container
 ```
-docker run -v $(pwd)/data:/data --rm anncprice/loadmodel:1.1 vectorizer.pkl model.pkl
+docker run -v $(pwd)/data:/data --rm annacprice/loadmodel:1.1 vectorizer.pkl model.pkl
 ```
 
 This should reproduce the MLresults.txt file in loadmodel/data/output
