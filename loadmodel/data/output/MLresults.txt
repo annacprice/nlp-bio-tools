@@ -1,0 +1,4 @@
+/data/text/neg11.pdf.txt	1	0.2	0.8
+/data/text/neg12.pdf.txt	1	0.2	0.8
+/data/text/pos11.pdf.txt	1	0.0	1.0
+/data/text/pos12.pdf.txt	1	0.0	1.0
