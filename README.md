@@ -35,7 +35,7 @@ docker run -v $(pwd)/data:/data --rm annacprice/pdf2nlp:1.1
 This should reproduce the files in pdf2nlp/data/output 
 
 
-### Stage 2: mlpipe###
+### Stage 2: mlpipe ###
 mlpipe builds a binary classification machine learning (ML) model. 
 
 Some of the txt files produced by pdf2nlp have been placed in mlpipe/data/text to make a training set for mlpipe. They have been divided into positive and datasets. The expected output of the mlpipe container (a txt results file, ROC curve, and the saved pkl files for the built ML model) can be found in mlpipe/data/output.
