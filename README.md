@@ -10,7 +10,7 @@ Additionally, a logistic regression model for classification of articles into th
 The following quick start guide uses a dummy dataset to demonstrate how to build and use a machine learning model with NLP-Bio-Tools.
 
 ### Setup ###
-The first step is to install Docker (Windows, Mac and Ubuntu). Once Docker is installed, the following commands can be used to pull the Docker images for each application from Docker Hub:
+The first step is to install Docker ([Windows](https://docs.docker.com/docker-for-windows/install/), [Mac](https://docs.docker.com/docker-for-mac/install/) and [Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/)). Once Docker is installed, the following commands can be used to pull the Docker images for each application from Docker Hub:
 ```
 docker pull annacprice/pdf2nlp:1.1
 docker pull annacprice/mlpipe:1.1
@@ -38,7 +38,7 @@ This should reproduce the files in pdf2nlp/data/output
 ### Stage 2: mlpipe ###
 mlpipe builds a binary classification machine learning (ML) model. 
 
-Some of the txt files produced by pdf2nlp have been placed in mlpipe/data/text to make a training set for mlpipe. They have been divided into positive and datasets. The expected output of the mlpipe container (a txt results file, ROC curve, and the saved pkl files for the built ML model) can be found in mlpipe/data/output.
+Some of the txt files produced by pdf2nlp have been placed in mlpipe/data/text to make a training set for mlpipe. They have been divided into positive and neagtive classes. The expected output of the mlpipe container (a txt results file, ROC curve, and the saved pkl files for the built ML model) can be found in mlpipe/data/output.
 
 If using Mac OS you will need to remove .DS_Store files from the mlpipe/data/text/positive and mlpipe/data/text/negative directories before running the mlpipe container. I.e. when in the directory run
 ```
@@ -57,7 +57,7 @@ This should reproduce the files in mlpipe/data/output
 More examples of vectorizers and ML algorithms that can be used with mlpipe are detailed in the [wiki](https://github.com/annacprice/nlp-bio-tools/wiki/How-to-build-your-own-machine-learning-model).
 
 ### Stage 3: loadmodel ###
-The remaining txt files from pdf2nlp have been placed in loadmodel/data/text to act as a testing dataset for our ML model from mlpipe (the model.pkl and vectorizer.pkl files), which can be found in loadmodel/data/models. The expected output from the loadmodel container is a txt results file, and can be found in loadmodel/data/output. The second column in the results file indicates whether the original pdf has been classified into the negative (represented by a 0) or positive dataset (represented by a 1).
+The remaining txt files from pdf2nlp have been placed in loadmodel/data/text to act as a testing dataset for our ML model from mlpipe (the model.pkl and vectorizer.pkl files), which can be found in loadmodel/data/models. The expected output from the loadmodel container is a txt results file, and can be found in loadmodel/data/output. The second column in the results file indicates whether the original pdf has been classified into the negative(represented by a 0) or positive class (represented by a 1).
 
 First navigate to the correct directory
 ```
