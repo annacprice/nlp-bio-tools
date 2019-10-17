@@ -1,0 +1,23 @@
+------------------------------------------------------------------
+CLASSIFIER:
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+           metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+           weights='uniform')
+------------------------------------------------------------------
+TRAINING:
+10-FOLD CLASSIFICATION:
+Accuracy on training set:
+0.55
+Classification report:
+             precision    recall  f1-score   support
+
+          0       1.00      0.10      0.18        10
+          1       0.53      1.00      0.69        10
+
+avg / total       0.76      0.55      0.44        20
+
+Confusion matrix:
+[[ 1  9]
+ [ 0 10]]
+Matthews coefficient:
+0.229415733871
