@@ -72,3 +72,5 @@ This should reproduce the MLresults.txt file in loadmodel/data/output
 
 More information on how to evaluate the performance of your ML model can be found in the wiki [1](https://github.com/annacprice/nlp-bio-tools/wiki/How-to-build-your-own-machine-learning-model), [2](https://github.com/annacprice/nlp-bio-tools/wiki/How-to-use-a-saved-machine-learning-model).
 
+## Acknowledgements ##
+We acknowledge the support of the Supercomputing Wales project, which is part-funded by the European Regional Development Fund (ERDF) via Welsh Government.
