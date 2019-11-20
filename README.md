@@ -4,7 +4,7 @@ NLP-Bio-Tools is a collection of applications for the text mining, Natural Langu
 
 A quick start guide using a dummy dataset is provided below. For more detailed information on how to build your own machine learning model and how to use Docker, please consult the [wiki](https://github.com/annacprice/nlp-bio-tools/wiki).
 
-Additionally, a logistic regression model for classification of articles into the HGMD can be found in the hgmd_model directory.
+Additionally, two logistic regression models for classification of articles into the [HGMD](http://www.hgmd.cf.ac.uk/ac/index.php) can be found in the hgmd_model directory. One model is for full text articles, and the other just for the title/abstract of articles.
 
 ## Quick Start ##
 The following quick start guide uses a dummy dataset to demonstrate how to build and use a machine learning model with NLP-Bio-Tools.
@@ -17,7 +17,7 @@ docker pull annacprice/mlpipe:1.1
 docker pull annacprice/loadmodel:1.1
 ```
 
-We now need to download the latest release of the NLP-Bio-Tools repositiory found [here](https://github.com/annacprice/nlp-bio-tools/releases/tag/v1.1). On opening the zip file you should see the nlp-bio-tools-1.1 folder where the necessary directory structure and dummy dataset needed to run NLP-Bio-Tools can be found.
+Next download the latest release of the NLP-Bio-Tools repositiory found [here](https://github.com/annacprice/nlp-bio-tools/releases/tag/v1.1). On opening the zip file you should see the nlp-bio-tools-1.1 folder where the necessary directory structure and dummy dataset needed to run NLP-Bio-Tools can be found.
 
 ### Stage 1: pdf2nlp ###
 pdf2nlp takes the input pdfs and passes them through a Natural Language Processing (NLP) pipeline. It outputs a txt file of tokens for each pdf which the ML algorithm in mlpipe can fit to.
